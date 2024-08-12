@@ -1,0 +1,18 @@
+version: 0.5
+
+tasks:
+  - init: |
+      # Install backend dependencies
+      cd backend
+      npm install
+      # Install frontend dependencies
+      cd ../client
+      npm install
+
+  - command: |
+      # Start the backend server
+      cd ../backend
+      npm run dev & # Run backend in the background
+      # Start the frontend development server
+      cd ../client
+      npm start
